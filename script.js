@@ -112,7 +112,7 @@ function createHueSpectrum() {
   hueGradient.addColorStop(1.00, "hsl(360, 100%, 50%)");
   ctx.fillStyle = hueGradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  canvas.addEventListener('mousedown', function(e) {
+  canvas.addEventListener('pointerdown', function(e) {
     startGetHueColor(e);
   });
 };
@@ -169,8 +169,8 @@ function updateSpectrumCursor(x, y) {
 var startGetSpectrumColor = function(e) {
   getSpectrumColor(e);
   spectrumCursor.classList.add('dragging');
-  window.addEventListener('mousemove', getSpectrumColor);
-  window.addEventListener('mouseup', endGetSpectrumColor);
+  window.addEventListener('poinretmove', getSpectrumColor);
+  window.addEventListener('pointereup', endGetSpectrumColor);
 };
 
 function getSpectrumColor(e) {
@@ -204,8 +204,8 @@ function endGetSpectrumColor(e) {
 function startGetHueColor(e) {
   getHueColor(e);
   hueCursor.classList.add('dragging');
-  window.addEventListener('mousemove', getHueColor);
-  window.addEventListener('mouseup', endGetHueColor);
+  window.addEventListener('pointermove', getHueColor);
+  window.addEventListener('pointereup', endGetHueColor);
 }
 
 function getHueColor(e) {
@@ -225,7 +225,7 @@ function getHueColor(e) {
 
 function endGetHueColor(e) {
   hueCursor.classList.remove('dragging');
-  window.removeEventListener('mousemove', getHueColor);
+  window.removeEventListener('pointeremove', getHueColor);
 };
 
 red.addEventListener('change', function() {
