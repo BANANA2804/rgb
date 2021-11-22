@@ -112,7 +112,7 @@ function createHueSpectrum() {
   hueGradient.addColorStop(1.00, "hsl(360, 100%, 50%)");
   ctx.fillStyle = hueGradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  canvas.addEventListener('pointerdown', function(e) {
+  canvas.addEventListener('mousedown', function(e) {
     startGetHueColor(e);
   });
 };
