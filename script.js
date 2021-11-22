@@ -169,8 +169,8 @@ function updateSpectrumCursor(x, y) {
 var startGetSpectrumColor = function(e) {
   getSpectrumColor(e);
   spectrumCursor.classList.add('dragging');
-  window.addEventListener('poinretmove', getSpectrumColor);
-  window.addEventListener('pointereup', endGetSpectrumColor);
+  window.addEventListener('mousemove', getSpectrumColor);
+  window.addEventListener('mouseup', endGetSpectrumColor);
 };
 
 function getSpectrumColor(e) {
